@@ -9,6 +9,7 @@ RUN apt-get update && \
         shellcheck \
     && \
     python3 -m pip install --no-cache-dir \
+        docker-compose \
         pipenv \
         pre_commit \
         tox \
