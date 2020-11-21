@@ -1,7 +1,15 @@
-FROM adarnimrod/ci-images:python3.7
+FROM buildpack-deps:buster
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        python3-dev \
+        python3-pip \
+        python3-setuptools \
+        python3-venv \
         shellcheck \
     && \
-    pip install --progress-bar=off -U --no-cache-dir pre_commit && \
+    python3 -m pip install --no-cache-dir \
+        pipenv \
+        pre_commit \
+        tox \
+    && \
     rm -rf /root/.cache /tmp/* /var/tmp/* /var/lib/apt/lists/* /var/cache/apt/archives/*
