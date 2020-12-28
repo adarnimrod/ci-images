@@ -2,7 +2,7 @@ FROM alpine:3.12
 RUN apk add --update --no-cache \
         bats \
         build-base \
-        docker \
+        docker-cli \
         git \
         openssh \
         openssl \
