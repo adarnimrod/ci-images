@@ -10,6 +10,6 @@ RUN apt-get update && \
         libssl-dev \
         zlib1g-dev \
     && \
-    pip install --progress-bar=off --no-cache-dir --upgrade pip<21.0 tox pipenv && \
+    pip install --progress-bar=off --no-cache-dir --upgrade 'pip<21.0' tox pipenv && \
     rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* /var/cache/apt/archives/* /root/.cache/*
 COPY --from=goose /usr/local/bin/goose /usr/local/bin/goose
