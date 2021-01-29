@@ -11,5 +11,3 @@ RUN apk add --update --no-cache \
         openssl \
     ;
 COPY --from=juxr /usr/local/bin/juxr /usr/local/bin/juxr
-ENV GIT_AUTHOR_EMAIL='you@example.com' \
-    GIT_AUTHOR_NAME='Your Name'
