@@ -1,4 +1,5 @@
 FROM buildpack-deps:buster
+# hadolint ignore=DL3008,DL3013
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         python3-dev \
@@ -9,6 +10,7 @@ RUN apt-get update && \
         docutils \
         pip \
         pipenv \
+        poetry \
         pygments \
         tox \
         twine \
