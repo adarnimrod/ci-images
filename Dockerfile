@@ -13,6 +13,7 @@ RUN apt-get update && \
     python3 -m pip install --no-cache-dir \
         docker-compose \
         pipenv \
+        poetry \
         pre_commit \
         tox \
     && \
