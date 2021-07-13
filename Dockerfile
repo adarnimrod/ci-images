@@ -1,5 +1,7 @@
 # hadolint ignore=DL3006
 FROM registry.hub.docker.com/library/centos:7
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
 # hadolint ignore=DL3013,DL3033
 RUN yum group install -y "Development tools" && \
     yum install -y \
