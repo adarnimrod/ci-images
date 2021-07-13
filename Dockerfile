@@ -1,42 +1,15 @@
 # hadolint ignore=DL3006
-FROM registry.access.redhat.com/ubi7/ubi
+FROM registry.hub.docker.com/library/centos:7
 # hadolint ignore=DL3013,DL3033
-RUN yum install -y --disableplugin=subscription-manager \
-        autoconf \
-        automake \
-        binutils \
-        bison \
-        byacc \
-        cscope \
-        ctags \
-        diffstat \
-        doxygen \
-        elfutils \
-        flex \
-        gcc \
-        gcc-c++ \
-        gcc-gfortran \
-        gettext \
-        git \
-        indent \
-        intltool \
-        libtool \
-        make \
-        patch \
-        patchutils \
-        pkgconfig \
-        rcs \
-        redhat-rpm-config \
-        rh-python36-python-devel \
-        rh-python36-python-pip \
-        rpm-build \
-        rpm-sign \
-        subversion \
-        swig \
-        systemtap \
+RUN yum group install -y "Development tools" && \
+    yum install -y \
+        python3-devel \
+        python3-pip \
+        python3-wheel \
     && \
-    yum --disableplugin=subscription-manager clean all && \
-    pip install --no-cache-dir --progress-bar=off \
+    yum clean all && \
+    pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir \
         docutils \
         pipenv \
         poetry \
