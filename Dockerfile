@@ -8,12 +8,8 @@ RUN apt-get update && \
     && \
     python3 -m pip install --progress-bar=off --no-cache-dir --upgrade pip && \
     python3 -m pip install --progress-bar=off --no-cache-dir --upgrade \
-        docutils \
         pipenv \
         poetry \
-        pygments \
         tox \
-        twine \
-        wheel \
     && \
     rm -rf /tmp/* /var/tmp/* /var/lib/apt/lists/* /var/cache/apt/archives/* /root/.cache/*
