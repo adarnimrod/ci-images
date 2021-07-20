@@ -12,6 +12,7 @@ RUN yum group install -y "Development tools" && \
     yum clean all && \
     pip3 install --no-cache-dir --upgrade pip && \
     pip3 install --no-cache-dir \
+        auditwheel \
         docutils \
         pipenv \
         poetry \
