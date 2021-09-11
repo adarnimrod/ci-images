@@ -1,13 +1,11 @@
-FROM registry.hub.docker.com/cloudbees/juxr:0.1.22 AS juxr
-
-FROM registry.hub.docker.com/library/alpine:3.13
+FROM registry.hub.docker.com/library/alpine:3.14
 # hadolint ignore=DL3018
 RUN apk add --update --no-cache \
         bats \
         build-base \
         docker-cli \
         git \
-        openssh \
+        openssh-client-default \
         openssl \
-    ;
-COPY --from=juxr /usr/local/bin/juxr /usr/local/bin/juxr
+    && \
+    rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
