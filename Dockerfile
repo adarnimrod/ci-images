@@ -7,7 +7,6 @@ RUN apt-get update && \
         python3-pip \
         python3-setuptools \
         python3-venv \
-        shellcheck \
     && \
     python3 -m pip install --no-cache-dir --upgrade pip && \
     python3 -m pip install --no-cache-dir \
