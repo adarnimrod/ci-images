@@ -1,6 +1,8 @@
+# hadolint ignore=DL3006
 FROM adarnimrod/goose as goose
 
 FROM python:3.7-slim-stretch
+# hadolint ignore=DL3008,DL3013
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         build-essential \
